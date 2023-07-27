@@ -146,8 +146,14 @@
               }
 
               curr_element = currently_clicked_element;
+              console.log(
+                
+                "currently clicked element : ",
+                currently_clicked_element
+              );
 
               console.log(
+
                 "currently clicked element : ",
                 currently_clicked_element
               );
@@ -201,7 +207,6 @@
         const parent = document.getElementById("paerentgrid");
         var shadow_box = document.createElement("div");
         shadow_box.setAttribute("id", "top-card");
-        shadow_box.setAttribute("class", " draggable resizable");
         shadow_box.style.cssText = `
             height: 50%;
             width: 100%;
@@ -209,11 +214,24 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: red;
+            // background-image: url("https://res.cloudinary.com/doh91aq3h/image/upload/v1689319905/Screenshot%20from%202023-07-14%2012-56-34.png.png");
+
             opacity: .4;
           `;
         console.log("attahched shadow");
         parent.appendChild(shadow_box);
+
+        var image = new Image();
+
+        image.setAttribute(
+          "src",
+          "https://res.cloudinary.com/doh91aq3h/image/upload/v1689319905/Screenshot%20from%202023-07-14%2012-56-34.png.png"
+        );
+        image.style.cssText = `
+          width: 100%;
+          height: 100%
+        `;
+        shadow_box.appendChild(image);
 
         try {
           $("#top-card").draggable({
